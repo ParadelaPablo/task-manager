@@ -1,0 +1,128 @@
+/* modal.css */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.modal-content h2 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.modal-content label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Estilos para los inputs, selects y textareas (pero NO los checkboxes) */
+.modal-content input:not([type="checkbox"]),
+.modal-content select,
+.modal-content textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    box-sizing: border-box;  /* Asegura que el padding no afecte el tamaño total del input */
+}
+
+/* Aseguramos que el padding no sobrepase el contenedor */
+.modal-content textarea {
+    height: 100px;
+}
+
+.modal-content button {
+    background-color: #2f88fd;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.modal-content button:hover {
+    background-color: #1e6bd3;
+}
+
+.modal-content .cancel-btn {
+    background-color: #f44336;
+    margin-top: 10px;
+}
+
+.modal-content .cancel-btn:hover {
+    background-color: #d32f2f;
+}
+
+/* Estilos para los checkbox de empleados */
+
+/* Contenedor de empleados */
+.employee-select-container {
+    max-height: 200px;
+    overflow-y: auto;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;  /* Asegura que el contenedor ocupe todo el ancho disponible */
+    overflow-x: hidden;  /* Elimina cualquier scroll horizontal */
+}
+
+/* Asegurar que los checkboxes estén alineados a la izquierda */
+.employee-checkbox {
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+    justify-content: flex-start; /* Alineación a la izquierda */
+    width: 100%;  /* Asegura que el checkbox ocupe todo el ancho disponible */
+    box-sizing: border-box; /* Evita que el tamaño se vea afectado por padding */
+}
+
+/* Efecto hover en cada checkbox */
+.employee-checkbox:hover {
+    background-color: #f2f2f2;
+}
+
+/* Alineación de los checkboxes */
+.employee-checkbox input {
+    margin-right: 10px;
+    flex-shrink: 0; /* Evita que el checkbox se reduzca */
+}
+
+/* Estilo para el nombre de los empleados */
+.employee-checkbox span {
+    font-size: 16px;
+    color: #333;
+    margin-left: 5px; /* Espacio entre el checkbox y el nombre */
+}
+
+/* Ajuste el diseño para una mejor experiencia */
+.employee-checkbox:last-child {
+    margin-bottom: 0;
+}

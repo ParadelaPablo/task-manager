@@ -1,0 +1,10 @@
+
+/* Icons */
+.icon-container {
+    position: relative; /* relative */
+    }
+    
+    .icon {
+    font-size: 1.25rem; /* text-xl */
+    }
+    

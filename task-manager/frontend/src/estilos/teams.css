@@ -1,0 +1,133 @@
+.teams-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 63vh;
+    padding: 1.5rem;
+    background-color: #f9fafb;
+}
+
+.teams-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.teams-title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.teams-btn-primary {
+    padding: 0.5rem 1rem;
+    background-color: #4a90e2;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.teams-btn-primary:hover {
+    background-color: #5db5a8;
+}
+
+.teams-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    justify-items: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+.teams-card {
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    box-sizing: border-box;
+}
+
+.teams-card:hover {
+    transform: scale(1.02);
+}
+
+.teams-card-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.teams-card p {
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+.delete-btn {
+    background-color: #ff4d4f;
+    color: #fff;
+    border: none;
+    width: 30%;
+    border-radius: 4px;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+    font-size: 0.75rem;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.delete-btn:hover {
+    background-color: #e63946;
+}
+
+@media (max-width: 768px) {
+    .teams-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .teams-card {
+        width: 100%;
+    }
+
+    .teams-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .teams-btn-primary {
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .teams-cards {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .teams-card {
+        width: 100%;
+    }
+
+    .teams-title {
+        font-size: 1.5rem;
+    }
+
+    .teams-btn-primary {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+}
