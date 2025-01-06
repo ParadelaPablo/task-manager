@@ -1,0 +1,77 @@
+
+/* Buttons */
+.btn {
+padding: 0.5rem 1rem; /* py-2 px-4 */
+border-radius: 0.375rem; /* rounded-lg */
+font-weight: 500;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+
+.btn-primary {
+background-color: #3b82f6; /* bg-blue-500 */
+color: #ffffff; /* text-white */
+}
+
+.btn-primary:hover {
+background-color: #2563eb; /* hover:bg-blue-600 */
+}
+
+.btn-secondary {
+background-color: #e5e7eb; /* bg-gray-300 */
+color: #1f2937; /* text-gray-800 */
+}
+
+.btn-secondary:hover {
+background-color: #d1d5db; /* hover:bg-gray-400 */
+}
+
+
+/* Buttons */
+.btn-primary {
+    background-color: #3b82f6;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    text-align: center;
+    border: none;
+cursor: pointer;
+}
+
+.btn-secondary {
+background-color: #e5e7eb;
+color: #1f2937;
+padding: 0.5rem 1rem;
+border-radius: 0.375rem;
+text-align: center;
+border: none;
+cursor: pointer;
+}
+
+.btn-primary:hover {
+background-color: #2563eb;
+}
+
+.btn-secondary:hover {
+background-color: #d1d5db;
+}
+
+}
+
+/* Buttons */
+.btn {
+    padding: 0.5rem 1rem; /* py-2 px-4 */
+    border-radius: 0.375rem; /* rounded-lg */
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+  background-color: #3b82f6; /* bg-blue-500 */
+  color: #ffffff; /* text-white */
+}
+
+.btn-primary:hover {
+  background-color: #2563eb; /* hover:bg-blue-600 */
+}
