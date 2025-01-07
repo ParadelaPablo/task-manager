@@ -2,13 +2,12 @@ services:
   - type: web
     name: task-manager-backend
     env: java
-    plan: free
-    buildCommand: cd backend/backend && ./mvnw clean install
-    startCommand: java -jar backend/backend/target/backend-0.0.1-SNAPSHOT.jar
+    buildCommand: cd backend/backend && mvn clean install
+    startCommand: java -jar target/backend-0.0.1-SNAPSHOT.jar
     envVars:
       - key: DATABASE_URL
-        value: tu-external-database-url
+        value: "postgresql://taskmanager_ck0x_user:87ByaS05xtt3vRBDwrVRE19xT5fwRCKe@dpg-ctu552i3esus7399d7bg-a.frankfurt-postgres.render.com/taskmanager_ck0x"
       - key: DATABASE_USERNAME
-        value: tu-username
+        value: "taskmanager_ck0x_user"
       - key: DATABASE_PASSWORD
-        value: tu-password
+        value: "87ByaS05xtt3vRBDwrVRE19xT5fwRCKe"
