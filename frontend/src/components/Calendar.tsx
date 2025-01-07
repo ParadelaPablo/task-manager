@@ -12,7 +12,7 @@ interface Project {
 
 const CalendarComponent: React.FC = () => {
     const [projects, setProjects] = useState<Project[]>([]);
-    const [date, setDate] = useState<Date | [Date, Date] | null>(new Date());
+    const [date] = useState<Date | [Date, Date] | null>(new Date());
     const [markedDates, setMarkedDates] = useState<Date[]>([]);
 
     useEffect(() => {
@@ -33,13 +33,6 @@ const CalendarComponent: React.FC = () => {
         setMarkedDates(dates);
     }, [projects]);
 
-    const handleChange = (value: Date | Date[] | null) => {
-        if (Array.isArray(value)) {
-            setDate(value.length === 2 ? [value[0], value[1]] : value[0]);
-        } else {
-            setDate(value);
-        }
-    };
 
     const tileClassName = ({ date, view }: { date: Date; view: string }) => {
         if (view === "month") {
