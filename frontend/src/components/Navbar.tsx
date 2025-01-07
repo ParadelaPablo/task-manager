@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { SignInButton, UserButton, useAuth } from "@clerk/clerk-react";
 import "../estilos/navbar.css";
 import "../estilos/buttons.css";
@@ -8,16 +8,15 @@ import "../index.css";
 
 interface NavbarProps {
     loggedIn: boolean;
-    onSignOut: () => void;
+    onSignOut: () => void; // Añadimos la prop onSignOut
 }
 
 const Navbar: React.FC<NavbarProps> = ({ loggedIn, onSignOut }) => {
-    const navigate = useNavigate();
     const { isSignedIn } = useAuth();
 
     useEffect(() => {
         if (isSignedIn) {
-
+            // Aquí podrías añadir lógica adicional si lo necesitas
         }
     }, [isSignedIn]);
 
@@ -53,10 +52,14 @@ const Navbar: React.FC<NavbarProps> = ({ loggedIn, onSignOut }) => {
                         <div className="icon-container">
                             <UserButton />
                         </div>
+                        <button className="btn btn-secondary" onClick={onSignOut}>
+                            Sign Out
+                        </button>
                     </>
                 )}
             </div>
         </nav>
     );
 };
+
 export default Navbar;

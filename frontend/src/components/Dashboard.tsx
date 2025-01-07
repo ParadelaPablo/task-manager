@@ -8,9 +8,6 @@ const Dashboard: React.FC = () => {
     const [employeeCount, setEmployeeCount] = useState<number>(0);
     const [teamCount, setTeamCount] = useState<number>(0);
 
-    interface DashboardProps {
-        projects: Project[];
-    }
 
     useEffect(() => {
         const fetchData = async () => {

@@ -51,6 +51,8 @@ const App: React.FC = () => {
         setHasRedirected(false);
     };
 
+    
+
     return (
         <div className="app-container">
             <Navbar loggedIn={isSignedIn || false} onSignOut={handleSignOut} />
@@ -63,7 +65,7 @@ const App: React.FC = () => {
                     path="/dashboard"
                     element={
                         <SignedIn>
-                            <Dashboard projects={projects} />
+                            <Dashboard/>
                         </SignedIn>
                     }
                 />

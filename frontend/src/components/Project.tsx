@@ -9,13 +9,6 @@ import "../estilos/buttons.css";
 import axiosInstance from '../services/axiosInstance';
 import { Project, Team } from './types';
 
-interface LocalProject {
-    id: number;
-    name: string;
-    description: string;
-    teamName?: string;
-    deadline?: string;
-}
 
 interface ProjectsProps {
     projects: Project[];
@@ -23,9 +16,10 @@ interface ProjectsProps {
     onDeleteProject: (projectId: number) => void;
 }
 
-const Projects: React.FC<ProjectsProps> = ({ projects, setProjects, onDeleteProject }) => {
-    const [isModalOpen, setIsModalOpen] = useState(false);
+
+const Projects: React.FC<ProjectsProps> = ({ projects, setProjects }) => {
     const [teams, setTeams] = useState<Team[]>([]);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const handleOpenModal = () => setIsModalOpen(true);
     const handleCloseModal = () => setIsModalOpen(false);
@@ -114,3 +108,6 @@ const Projects: React.FC<ProjectsProps> = ({ projects, setProjects, onDeleteProj
 };
 
 export default Projects;
+
+
+
