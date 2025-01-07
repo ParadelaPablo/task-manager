@@ -1,5 +1,5 @@
 # Usar una imagen de Java con Maven preinstalado
-FROM maven:3.8.6-openjdk-17 AS build
+FROM maven:3.8.8-eclipse-temurin-17 AS build
 
 # Establecer el directorio de trabajo
 WORKDIR /app
