@@ -1,9 +1,9 @@
 services:
   - type: web
     name: task-manager-backend
-    env: java
-    buildCommand: cd backend/backend && mvn clean install
-    startCommand: java -jar target/backend-0.0.1-SNAPSHOT.jar
+    env: docker
+    dockerfilePath: backend/backend/Dockerfile
+    plan: free
     envVars:
       - key: DATABASE_URL
         value: "postgresql://taskmanager_ck0x_user:87ByaS05xtt3vRBDwrVRE19xT5fwRCKe@dpg-ctu552i3esus7399d7bg-a.frankfurt-postgres.render.com/taskmanager_ck0x"
@@ -11,3 +11,5 @@ services:
         value: "taskmanager_ck0x_user"
       - key: DATABASE_PASSWORD
         value: "87ByaS05xtt3vRBDwrVRE19xT5fwRCKe"
+      - key: PORT
+        value: "8080"
