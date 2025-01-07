@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import { useUser, SignedIn } from "@clerk/clerk-react";
+import { useUser, SignedIn, useAuth } from "@clerk/clerk-react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
@@ -16,6 +16,7 @@ import CalendarComponent from "./components/Calendar";
 
 const App: React.FC = () => {
     const { isSignedIn } = useUser();
+    const { signOut } = useAuth();
     const navigate = useNavigate();
     const [hasRedirected, setHasRedirected] = useState(false);
     const [projects, setProjects] = useState<Project[]>([]);
@@ -24,6 +25,8 @@ const App: React.FC = () => {
         if (isSignedIn && !hasRedirected) {
             navigate("/dashboard");
             setHasRedirected(true);
+        } else if (!isSignedIn) {
+            setHasRedirected(false);
         }
     }, [isSignedIn, navigate, hasRedirected]);
 
@@ -46,12 +49,15 @@ const App: React.FC = () => {
         }
     }, [isSignedIn]);
 
-    const handleSignOut = () => {
-        navigate("/");
-        setHasRedirected(false);
+    const handleSignOut = async () => {
+        try {
+            await signOut();
+            setHasRedirected(false);
+            navigate("/");
+        } catch (error) {
+            console.error("Error signing out:", error);
+        }
     };
-
-    
 
     return (
         <div className="app-container">
@@ -65,7 +71,7 @@ const App: React.FC = () => {
                     path="/dashboard"
                     element={
                         <SignedIn>
-                            <Dashboard/>
+                            <Dashboard />
                         </SignedIn>
                     }
                 />
