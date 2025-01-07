@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: task-manager-backend
+    env: java
+    plan: free
+    buildCommand: cd backend/backend && ./mvnw clean install
+    startCommand: java -jar backend/backend/target/backend-0.0.1-SNAPSHOT.jar
+    envVars:
+      - key: DATABASE_URL
+        value: tu-external-database-url
+      - key: DATABASE_USERNAME
+        value: tu-username
+      - key: DATABASE_PASSWORD
+        value: tu-password
