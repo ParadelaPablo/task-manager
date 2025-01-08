@@ -80,7 +80,7 @@ const Teams = () => {
             <div className="teams-container">
                 <div className="teams-header">
                     <h1 className="teams-title">Teams</h1>
-                    <p>Total Projects: {projects.length}</p> {/* Agregado */}
+                    <p>Total Projects: {projects.length}</p> 
                     <button className="teams-btn-primary" onClick={handleOpenModal}>
                         Create New Team
                     </button>
