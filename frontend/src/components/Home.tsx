@@ -20,7 +20,7 @@ const Home: React.FC<HomeProps> = ({ onSignIn }) => {
                     </div>
                     <div className="hero-right">
                         <img
-                            src="./public/Logo.png"
+                            src="./Logo.png"
                             alt="Company Logo"
                             className="hero-logo"
                         />
