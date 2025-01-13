@@ -2,11 +2,9 @@ import "../index.css";
 import React from "react";
 import "../estilos/home.css";
 
-interface HomeProps {
-    onSignIn: () => void;
-}
+interface HomeProps {}
 
-const Home: React.FC<HomeProps> = ({ onSignIn }) => {
+const Home: React.FC<HomeProps> = () => {
     return (
         <div className="home">
             <main className="main-home">
@@ -16,7 +14,6 @@ const Home: React.FC<HomeProps> = ({ onSignIn }) => {
                         <p className="hero-description">
                             Empower your company with effortless task management and seamless collaboration.
                         </p>
-                        <button onClick={onSignIn} className="btn btn-primary">Sign In</button>
                     </div>
                     <div className="hero-right">
                         <img
