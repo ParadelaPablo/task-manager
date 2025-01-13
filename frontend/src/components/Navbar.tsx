@@ -8,7 +8,7 @@ import "../index.css";
 
 interface NavbarProps {
     loggedIn: boolean;
-    onSignOut: () => void; // Añadimos la prop onSignOut
+    onSignOut: () => void; 
 }
 
 const Navbar: React.FC<NavbarProps> = ({ loggedIn, onSignOut }) => {
@@ -16,7 +16,6 @@ const Navbar: React.FC<NavbarProps> = ({ loggedIn, onSignOut }) => {
 
     useEffect(() => {
         if (isSignedIn) {
-            // Aquí podrías añadir lógica adicional si lo necesitas
         }
     }, [isSignedIn]);
 

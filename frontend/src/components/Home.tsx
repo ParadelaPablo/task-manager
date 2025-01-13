@@ -1,10 +1,9 @@
 import "../index.css";
 import React from "react";
 import "../estilos/home.css";
+import { SignInButton } from "@clerk/clerk-react";
 
-interface HomeProps {}
-
-const Home: React.FC<HomeProps> = () => {
+const Home: React.FC = () => {
     return (
         <div className="home">
             <main className="main-home">
@@ -14,10 +13,13 @@ const Home: React.FC<HomeProps> = () => {
                         <p className="hero-description">
                             Empower your company with effortless task management and seamless collaboration.
                         </p>
+                        <SignInButton mode="modal">
+                            <button className="btn btn-primary">Sign In</button>
+                        </SignInButton>
                     </div>
                     <div className="hero-right">
                         <img
-                            src="./Logo.png"
+                            src="/Logo.png"
                             alt="Company Logo"
                             className="hero-logo"
                         />
